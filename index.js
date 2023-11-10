@@ -1,3 +1,9 @@
+const averagePriceSpan = document.getElementById("price")
+const table = document.getElementById("table")
+let avePrice = 0
+let peopleAdded = 0
+let setIntervalId
+
 const freelancers = [
     { name: "Dr. Slice", price: 25, occupation: "gardener" },
     { name: "Dr. Pressure", price: 51, occupation: "programmer" },
@@ -8,16 +14,9 @@ const freelancers = [
     { name: "Dr. Wire", price: 47, occupation: "teacher" },
     { name: "Prof. Goose", price: 72, occupation: "driver" },
   ];
-  let averageCost = 0
 
-  function avePrice(data){
-    let totalCost = 0
-    for (let i = 0; i < data.length; i++) {
-        totalCost = totalCost + data[i].price
-      }
-      averageCost = totalCost/data.length
-      return averageCost
+  const addFreelancer = (freelancer) =>{
+    const tableRow = document.createElement("tr")
+    const freelancerName = document.createElement("td")
+    
   }
-  averageCost = avePrice(freelancers)
-
-  document.getElementById("AvePrice").innerHTML = "The average starting price is " + averageCost ;
