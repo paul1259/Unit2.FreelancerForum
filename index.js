@@ -1,6 +1,6 @@
 const averagePriceSpan = document.getElementById("price")
 const table = document.getElementById("table")
-let avePrice = 0
+let totalPrice = 0
 let peopleAdded = 0
 let setIntervalId
 
@@ -26,8 +26,8 @@ const freelancers = [
     tableRow.append(freelancerName,freelancerOccupation,freelancerPrice)
     table.append(tableRow)
     peopleAdded++
-    averagePriceSpan.textContent = (avePrice + freelancer.price)/peopleAdded
-    avePrice = (avePrice + freelancer.price)
+    averagePriceSpan.textContent = ((totalPrice + freelancer.price)/peopleAdded).toFixed(2)
+    totalPrice = (totalPrice + freelancer.price)
 
   }
   setIntervalId = setInterval(() => {
