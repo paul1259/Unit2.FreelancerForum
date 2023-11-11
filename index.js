@@ -18,5 +18,19 @@ const freelancers = [
   const addFreelancer = (freelancer) =>{
     const tableRow = document.createElement("tr")
     const freelancerName = document.createElement("td")
-    
+    freelancerName.textContent = freelancer.name
+    const freelancerOccupation = document.createElement("td")
+    freelancerOccupation.textContent = freelancer.occupation
+    const freelancerPrice = document.createElement("td")
+    freelancerPrice.textContent = freelancer.price
+    tableRow.append(freelancerName,freelancerOccupation,freelancerPrice)
+    table.append(tableRow)
+    peopleAdded++
+    averagePriceSpan.textContent = (avePrice + freelancer.price)/peopleAdded
+    avePrice = (avePrice + freelancer.price)
+
   }
+  setIntervalId = setInterval(() => {
+    if(peopleAdded < freelancers.length){addFreelancer(freelancers[peopleAdded])}
+      else{clearInterval(setIntervalId)}
+  }, 3000);
