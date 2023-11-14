@@ -33,4 +33,4 @@ const freelancers = [
   setIntervalId = setInterval(() => {
     if(peopleAdded < freelancers.length){addFreelancer(freelancers[peopleAdded])}
       else{clearInterval(setIntervalId)}
-  }, 3000);
+  }, 1500);
